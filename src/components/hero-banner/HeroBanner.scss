@@ -1,0 +1,116 @@
+@import "../../Css/base";
+@import "../../Css/mixins";
+@import "../../Css/variable";
+@import "../../Css/aem_grid";
+
+.hero-wrapper {
+
+    .hero-content {
+        background: var(--como-547665) 0% 0% no-repeat padding-box;
+        padding: 42px 21px 68px 21px;
+        background-color: $main_color2;
+        position: absolute;
+        width: 90% !important;
+        top: auto;
+        left: 5%;
+        margin-top: 20%;
+        margin-bottom: 20px;
+
+        h2 {
+            font: normal normal 600 36px/42px Source Serif Pro;
+            ;
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--white);
+            text-align: center;
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 30%;
+                top: 149px;
+                right: 34%;
+                color: white;
+                height: 5px;
+                background-color: $color-primary;
+            }
+        }
+    }
+
+    .hero-img {
+        img {
+            width: 100%;
+            object-fit: cover;
+            object-position: 100% 0;
+        }
+    }
+
+}
+
+@include desktop{
+    .hero-content {
+        height: 24vw !important;
+    }
+    .hero-img {
+        img {
+            margin: 50px 0;
+        }
+    }
+}
+
+
+@include tablet {
+
+    .hero-wrapper {
+        background: var(--como-547665) 0% 0% no-repeat padding-box;
+
+        .hero-content {
+            background-color: #1B252C;
+            position: relative;
+            height: 25vw;
+            top: auto;
+            left: 0;
+            margin: 20px 0;
+            margin-bottom: 0;
+            width: 41.66667% !important;
+
+            h2 {
+                font: normal normal 600 48px/60px Source Serif Pro;
+                &::after{
+                    top: 180px;
+                }
+            }
+
+        }
+        .hero-img {
+            img {
+                margin: 30px 0;
+            }
+        }
+    }
+
+}
+
+
+
+/*
+
+
+.hero-wrapper .hero-content {
+    background: var(--como-547665) 0% 0% no-repeat padding-box;
+    padding: 128px 21px 93px 21px;
+    position: absolute;
+    width: 72% !important;
+    top: auto;
+    left: 20%;
+    margin-top: 66%;
+}
+
+/static/media/herobannerwomen.25301e4ed4cbcc357d43.jpg
+
+background-image: url(./static/media/herobannerwomen.25301e4ed4cbcc357d43.jpg
+);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 563px;
+    overflow: hidden;
+*/

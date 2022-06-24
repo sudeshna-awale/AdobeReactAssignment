@@ -1,0 +1,187 @@
+@import "../../Css/base";
+@import "../../Css/mixins";
+@import "../../Css/variable";
+@import "../../Css/aem_grid";
+
+header {
+    padding-left: 13px;
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .2);
+    margin: auto;
+
+    .navbar {
+        @include flex(center, space-between);
+        padding: 20px 0px;
+
+        .hamburger {
+            position: relative;
+            cursor: pointer;
+            border: none;
+        }
+
+        .logo h1 {
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-48)/var(--unnamed-line-spacing-60) var(--unnamed-font-family-source-serif-pro);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--unnamed-color-172026);
+            text-align: left;
+
+            span {
+                color: $color-primary;
+            }
+        }
+
+        .menu-link {
+            display: flex;
+            flex-direction: column;
+            width: 97%;
+            position: absolute;
+            top: 0px;
+            left: -110%;
+            opacity: 1;
+
+            .btn-close {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 20px 16px;
+                background: var(--gray-l1) 0% 0% no-repeat padding-box;
+
+                h2 {
+                    color: $color-grayD1;
+                }
+            }
+
+            ul,
+            label {
+                position: relative;
+                left: 14px;
+
+                li {
+                    border-bottom: 1px solid $color-grayL2;
+                    width: 96%;
+                    padding: 15px 0;
+
+                    a {
+                        font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+                        letter-spacing: var(--unnamed-character-spacing-0);
+                        color: var(--unnamed-color-172026);
+                        text-align: left;
+                    }
+                }
+            }
+
+            label {
+                background-color: $color-grayL3;
+                width: 50%;
+                padding: 10px 0;
+            }
+
+        }
+
+        .active {
+            background-color: #fff;
+            height: 100vh;
+            width: 100vw;
+            left: 0px;
+            opacity: 1;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .search-bar {
+            ul {
+                display: flex;
+
+                li {
+                    padding: 0 7px;
+
+                    a {
+                        display: flex;
+                        font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+                        letter-spacing: var(--unnamed-character-spacing-0);
+                        color: var(--unnamed-color-172026);
+
+                        img {
+                            margin-right: 5px;
+                            width: 14px;
+                        }
+
+                        >span {
+                            display: none;
+                        }
+                    }
+
+                    .signin {
+                        display: none;
+                    }
+
+                }
+
+                .shopping-cart {
+                    margin-right: 10px;
+                }
+
+            }
+
+        }
+
+    }
+
+
+
+}
+
+@include tablet {
+    header {
+        background: var(--white) 0% 0% no-repeat padding-box;
+
+        .navbar {
+
+            .hamburger {
+                display: none;
+            }
+
+            .menu-link {
+                display: block;
+                position: relative;
+                width: 45%;
+                top: 0px;
+                left: 0;
+                opacity: 1;
+
+                .btn-close {
+                    display: none;
+                }
+
+                ul {
+                    position: relative;
+                    top: 0;
+                    width: 90%;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    text-align: center;
+
+                    li {
+                        border: none;
+                        width: auto;
+                        padding: 0;
+                    }
+
+                }
+            }
+
+            .search-bar {
+                ul li {
+                    padding: 0 10px;
+
+                    a>span {
+                        display: block;
+                    }
+
+                    .signin {
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+}
